@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Container } from "reactstrap";
+// ================
+// Custom Component
+// ================
+import CarouselComponent from "./components/CarouselComponent";
+import NavbarComponent from "./components/NavbarComponent";
+// ==========================
+// Untuk Kebutuhan Data Table
+// ==========================
+import DataTable from "react-data-table-component";
+import { columns, data } from "./DummyData/initiateDataTable.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  state = {
+    judul: "Belajar React.",
+    developBy: "Rizki Hendra P",
+  };
+
+  render() {
+    return (
+      <div>
+        <NavbarComponent
+          judulPage={this.state.judul}
+          developBy={this.state.developBy}
+        />
+        <Container>
+          <CarouselComponent />
+        </Container>
+        <Container>
+          <DataTable columns={columns} data={data} pagination />
+        </Container>
+      </div>
+    );
+  }
 }
-
-export default App;
