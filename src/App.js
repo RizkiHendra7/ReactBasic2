@@ -6,10 +6,14 @@ import { Container } from "reactstrap";
 import CarouselComponent from "./components/CarouselComponent";
 import NavbarComponent from "./components/NavbarComponent";
 // ==========================
-// Untuk Kebutuhan Data Table
+// REACT ROUTER DOM Dan routing
 // ==========================
-import DataTable from "react-data-table-component";
-import { columns, data } from "./DummyData/initiateDataTable.js";
+import LandingPageContainer from "./containers/LandingPage/LandingPage.js";
+import IndexFilmContainer from "./containers/Film/IndexFilmContainer.js";
+import EditContainer from "./containers/Film/EditFilmContainer.js";
+import ViewContainer from "./containers/Film/ViewFilmContainer.js";
+import CreateContainer from "./containers/Film/CreateFilmContainer.js";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 export default class App extends Component {
   state = {
@@ -24,12 +28,23 @@ export default class App extends Component {
           judulPage={this.state.judul}
           developBy={this.state.developBy}
         />
-        <Container>
-          <CarouselComponent />
-        </Container>
-        <Container>
-          <DataTable columns={columns} data={data} pagination />
-        </Container>
+
+        <Router>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Container>
+                  <CarouselComponent />
+                </Container>
+              }
+            />
+            <Route path="/index" element={<IndexFilmContainer />} />
+            <Route path="/create" element={<CreateContainer />} />
+            <Route path="/edit/:id" element={<EditContainer />} />
+            <Route path="/view/:id" element={<ViewContainer />} />
+          </Routes>
+        </Router>
       </div>
     );
   }
