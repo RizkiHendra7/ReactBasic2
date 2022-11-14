@@ -7,14 +7,13 @@ import CarouselComponent from "./components/CarouselComponent";
 import NavbarComponent from "./components/NavbarComponent";
 // ==========================
 // REACT ROUTER DOM Dan routing
-// ==========================
-import LandingPageContainer from "./containers/LandingPage/LandingPage.js";
+// ========================== 
 import IndexFilmContainer from "./containers/Film/IndexFilmContainer.js";
 import EditContainer from "./containers/Film/EditFilmContainer.js";
 import ViewContainer from "./containers/Film/ViewFilmContainer.js";
 import CreateContainer from "./containers/Film/CreateFilmContainer.js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+ 
 export default class App extends Component {
   state = {
     judul: "Belajar React.",
