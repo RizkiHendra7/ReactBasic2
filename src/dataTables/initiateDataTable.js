@@ -1,29 +1,29 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faInfo, faTrash } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
-import { Button } from "reactstrap";
+import React from "react"; 
+import { Link } from "react-router-dom"; 
+import { BtnEditComponent } from "../components/buttonComponent/BtnEditComponent";
+import { BtnViewComponent } from "../components/buttonComponent/BtnViewComponent";
+import { BtnDeleteComponent } from "../components/buttonComponent/BtnDeleteComponent";
 
 export const columns = [
   {
     name: "Title",
-    selector: "title",
+    selector: (row) => row.title,
     sortable: true,
   },
   {
     name: "Director",
-    selector: "director",
+    selector: (row) => row.director,
     sortable: true,
   },
   {
     name: "Genres",
-    selector: "genres",
+    selector: (row) => row.genres,
     sortable: true,
     cell: (d) => <span>{d.genres.join(", ")}</span>,
   },
   {
     name: "Year",
-    selector: "year",
+    selector: (row) => row.year,
     sortable: true,
   },
   {
@@ -32,23 +32,17 @@ export const columns = [
     width: "20%",
     cell: (row) => (
       <div>
-        <Link to={"view/" + row.id}>
-          <Button color="primary" className="mr-2">
-            <FontAwesomeIcon icon={faInfo} /> View
-          </Button>
+        <Link to={"/view/" + row.id}>
+          <BtnViewComponent></BtnViewComponent>
         </Link>
 
-        <Link to={"edit/" + row.id}>
-          <Button color="warning" className="mr-2">
-            <FontAwesomeIcon icon={faEdit} /> Edit
-          </Button>
+        <Link to={"/edit/" + row.id}>
+          <BtnEditComponent></BtnEditComponent>
         </Link>
 
-        {/* <Link to={"detail/" + row.id}> */}
-        <Button color="danger" className="mr-6">
-          <FontAwesomeIcon icon={faTrash} /> Delete
-        </Button>
-        {/* </Link> */}
+        <Link to={"detail/" + row.id}>
+          <BtnDeleteComponent></BtnDeleteComponent>
+        </Link>
       </div>
     ),
   },
