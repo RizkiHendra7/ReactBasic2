@@ -17,17 +17,11 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faFaceSadCry} from '@fortawesome/free-solid-svg-icons' 
  
-//biar fixed saat di scroll
-const sticky = {
-  position: "fixed",
-  top: 0,
-  width: "100%",
-  
-}
+ 
 export default function Main(props) {
   return (
     <div> 
-      <Navbar color="light" light className={[sticky,'mb-3']}   expand={true}>
+      <Navbar color="light" light expand={true}>
         <NavbarBrand href="/">{props.judulPage}</NavbarBrand>
         <NavbarToggler onClick={function noRefCheck() {}} />
         <Collapse navbar>
@@ -39,8 +33,8 @@ export default function Main(props) {
               <NavLink href="/index">Film Page</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">
-                About Us
+              <NavLink href="/indexKota">
+                Kota Page
               </NavLink>
             </NavItem>
             <UncontrolledDropdown inNavbar nav>
