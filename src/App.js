@@ -13,8 +13,9 @@ import EditContainer from "./containers/Film/EditFilmContainer.js";
 import ViewContainer from "./containers/Film/ViewFilmContainer.js";
 import CreateContainer from "./containers/Film/CreateFilmContainer.js";
 import IndexKotaContainer from "./containers/Kota/IndexKotaContainer";
+import AddKotaContainer from "./containers/Kota/AddKotaContainer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+ 
  
 export default class App extends Component {
 
@@ -49,6 +50,7 @@ export default class App extends Component {
             <Route path="/edit/:id" element={<EditContainer />} />
             <Route path="/view/:id" element={<ViewContainer />} />
             <Route path="/indexKota" element={<IndexKotaContainer />} />
+            <Route path="/createKota" element={<AddKotaContainer />} />
             
           </Routes>
         </Router>

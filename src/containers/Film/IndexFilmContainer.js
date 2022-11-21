@@ -7,7 +7,7 @@ import { Container } from "reactstrap";
 import DataTable from "react-data-table-component";
 import DataTableExtensions from "react-data-table-component-extensions";
 import "react-data-table-component-extensions/dist/index.css";
-import { columns, data } from "../../dataTables/initiateDataTable.js";
+import { columns, data } from "../../dataTables/initiateDataTable.js"; 
 
 //untuk kebutuhan search dataTable
 const tableData = {

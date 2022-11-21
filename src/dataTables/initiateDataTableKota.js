@@ -4,7 +4,7 @@ import { BtnEditComponent } from "../components/buttonComponent/BtnEditComponent
 import { BtnViewComponent } from "../components/buttonComponent/BtnViewComponent";
 import { BtnDeleteComponent } from "../components/buttonComponent/BtnDeleteComponent"; 
 
-export const columns = [
+export const columns = [ 
     {
       name: "id",
       selector: (row) => row.id,
